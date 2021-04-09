@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="/materialize/css/materialize.min.css" media="screen,projection" />
+
+</head>
+<body>
+
+	<h1>Spring Boot + Thymeleaf + Material Design</h1>
+	<h5>Telefones</h5>
+	
+	<a class="btn waves-effect waves-light" href="/cadastropessoa">Voltar</a>
+
+	<div th:each="p : ${pessoaobj}">
+		<div class="row">
+			<p>ID: <span th:text="${p.id}"></span></p>
+			<p>Nome: <span th:text="${p.nome}"></span></p>
+			<p>Sobrenome: <span th:text="${p.sobrenome}"></span></p>
+			<p>Idade: <span th:text="${p.idade}"></span></p>
+		</div>
+	
+	</div>
+	
+	<h5>Cadastro Telefones</h5>
+	
+	<div class="row">
+		<form method="post" th:action="@{/addfonePessoa/{pessoaid}(pessoaid=${pessoaobj.id})}">
+			<div class="input-field col s6">
+				<label for="numero" class="active">Número</label>
+				<input name="numero" id="numero" type="text">
+			</div>
+			<div class="input-field col s6">
+				<label for="tipo" class="active">Tipo</label>
+				<input name="tipo" id="tipo" type="text" >
+			</div>
+			<div class="input-field col s12">
+				<button class="btn waves-effect waves-light" type="submit">
+						Gravar
+					</button>
+			</div>
+		</form>
+	</div>
+
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+
+</body>
+</html>
