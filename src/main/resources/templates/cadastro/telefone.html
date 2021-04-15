@@ -40,7 +40,7 @@
 	<br>
 	
 	<div class="row">
-		<form method="post" th:action="@{/addfonePessoa/{pessoaid}(pessoaid=${pessoaobj.id})}" onsubmit="return validarCampos()? true : false;">
+		<form method="post" th:action="@{/addfonePessoa/{pessoaid}(pessoaid=${pessoaobj.id})}" onsubmit="return validarCampos()? true : false">
 			<div class="input-field col s6">
 				<label for="numero" class="active">Número</label>
 				<input name="numero" id="numero" type="text">
