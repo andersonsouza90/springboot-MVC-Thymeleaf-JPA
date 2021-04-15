@@ -18,6 +18,16 @@
 	<h5>Cadastrar Pessoa</h5>
 
 	<div class="row">
+	
+	<br>
+		
+		<div th:each="m : ${msg}">
+			<span th:text="${m}"></span>
+		</div>
+		
+	<br>
+	
+	
 		<form action="salvarpessoa" method="post" th:object="${pessoaobj}"
 			class="col s12" id="formPessoa">
 
